@@ -7,6 +7,7 @@ $(function () {
 
     echart_map();
     echart_5();
+    echart_6();
 
     //echart_1湖南货物收入
     function echart_1() {
@@ -20,7 +21,7 @@ $(function () {
             legend: {
                 x: 'center',
                 y: '15%',
-                data: [ '张家口', '承德', '衡水','邢台', '邯郸', '保定','秦皇岛','石家庄', '唐山'],
+                data: [ '张家口', '承德', '衡水','邢台', '邯郸', '保定','秦皇岛','北京', '唐山'],
                 icon: 'circle',
                 textStyle: {
                     color: '#fff',
@@ -124,8 +125,8 @@ $(function () {
                         }
                     },
                     {
-                        value: 1600.58,
-                        name: '石家庄',
+                        value: 116.46,
+                        name: '北京',
                         itemStyle: {
                             normal: {
                                 color: '#f69846'
@@ -502,7 +503,7 @@ $(function () {
         var color = ['#c5f80e'];
         var series = [];
         [
-            ['石家庄', GZData]
+            ['北京', GZData]
         ].forEach(function (item, i) {
             series.push({
                 name: item[0],
@@ -706,7 +707,7 @@ $(function () {
           myChart.setOption({
               series: [{
                   type: 'map',
-                  mapType: 'hunan'
+                  mapType: '南磨坊'
               }]
           });
 
@@ -1387,32 +1388,126 @@ $(function () {
             myChart.resize();
         });
     }
+
+    function echart_6(){
+        var myChart = echarts.init(document.getElementById('chart_6'));
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    crossStyle: {
+                        color: '#fff'
+                    }
+                }
+            },
+            toolbox: {
+                feature: {
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            legend: {
+                data:['医院','学校','足疗店'],
+                textStyle: {
+                    color: '#fff',
+                }
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+                    axisLine: {
+                        lineStyle: {
+                            color: "#5793f3"
+                        }
+                    },
+                    axisPointer: {
+                        type: 'shadow'
+                    }
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    name: '医院',
+                    min: 0,
+                    max: 10,
+                    interval: 3,
+                    axisLine: {
+                        lineStyle: {
+                            color: "#5793f3"
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value} 家'
+                    }
+                },
+                {
+                    type: 'value',
+                    name: '学校',
+                    min: 0,
+                    max: 25,
+                    interval: 5,
+                    axisLine: {
+                        lineStyle: {
+                            color: "#5793f3"
+                        }
+                    },
+                    axisLabel: {
+                        formatter: '{value} 家'
+                    }
+                }
+            ],
+            series: [
+                {
+                    name:'医院',
+                    type:'bar',
+                    data:[2.0, 1, 2, 1, 2, 1, 2, 1, 2, 6, 2, 3]
+                },
+                {
+                    name:'学校',
+                    type:'bar',
+                    data:[2.0, 1, 2, 3, 2, 1, 6, 1, 2, 8, 2, 3]
+                },
+                {
+                    name:'足疗店',
+                    type:'line',
+                    yAxisIndex: 1,
+                    data:[2.0, 1, 2, 1, 2, 4, 2, 1, 2, 5, 2, 3]
+                }
+            ]
+        };
+        myChart.setOption(option);
+    }
     //点击跳转
-    $('#chart_map').click(function(){
-        window.location.href = './page/index.html';
-    });
-    $('.t_btn2').click(function(){
-        window.location.href = "./page/index.html?id=2";
-    });
-    $('.t_btn3').click(function(){
-        window.location.href = "./page/index.html?id=3";
-    });
-    $('.t_btn4').click(function(){
-        window.location.href = "./page/index.html?id=4";
-    });
-    $('.t_btn5').click(function(){
-        window.location.href = "./page/index.html?id=5";
-    });
-    $('.t_btn6').click(function(){
-        window.location.href = "./page/index.html?id=6";
-    });
-    $('.t_btn7').click(function(){
-        window.location.href = "./page/index.html?id=7";
-    });
-    $('.t_btn8').click(function(){
-        window.location.href = "./page/index.html?id=8";
-    });
-    $('.t_btn9').click(function(){
-        window.location.href = "./page/index.html?id=9";
-    });
+    // $('#chart_map').click(function(){
+    //     window.location.href = './page/index.html';
+    // });
+    // $('.t_btn2').click(function(){
+    //     window.location.href = "./page/index.html?id=2";
+    // });
+    // $('.t_btn3').click(function(){
+    //     window.location.href = "./page/index.html?id=3";
+    // });
+    // $('.t_btn4').click(function(){
+    //     window.location.href = "./page/index.html?id=4";
+    // });
+    // $('.t_btn5').click(function(){
+    //     window.location.href = "./page/index.html?id=5";
+    // });
+    // $('.t_btn6').click(function(){
+    //     window.location.href = "./page/index.html?id=6";
+    // });
+    // $('.t_btn7').click(function(){
+    //     window.location.href = "./page/index.html?id=7";
+    // });
+    // $('.t_btn8').click(function(){
+    //     window.location.href = "./page/index.html?id=8";
+    // });
+    // $('.t_btn9').click(function(){
+    //     window.location.href = "./page/index.html?id=9";
+    // });
 });
