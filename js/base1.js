@@ -391,6 +391,11 @@ function chart1() {
             confine: true,
             formatter: "{a} <br/>{b}: {c} ({d}%)"
         },
+        toolbox: {
+            feature: {
+                dataView: {show: true, readOnly: false}
+            }
+        },
         series: [
         // 主要展示层的
             {
@@ -1895,3 +1900,184 @@ $('#mineusL').on('click', function () {
         $(this).siblings('input:last').remove();
     }
 })
+
+
+
+function chart_5 () {
+    var myChart = echarts.init(document.getElementById('chart5'));
+    var xAxisData = [];
+    var data1 = [];
+    var data2 = [];
+    for (var i = 0; i < 100; i++) {
+        xAxisData.push('类目' + i);
+        data1.push((Math.sin(i / 5) * (i / 5 -10) + i / 6) * 5);
+        data2.push((Math.cos(i / 5) * (i / 5 -10) + i / 6) * 5);
+    }
+    option = {
+        title: { 
+            text: '曲线图',
+            textStyle: {
+                color: '#fff',
+                fontSize: '0.2rem',
+                fontWeight: 'normal',
+
+            },
+            backgroundColor: {
+
+            }
+        },
+        legend: {
+            data: ['bar', 'bar2'],
+            align: 'left',
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        toolbox: {
+            // y: 'bottom',
+            // feature: {
+            //     dataView: {},
+            // }
+        },
+        tooltip: {},
+        xAxis: {
+            data: xAxisData,
+            silent: false,
+            splitLine: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: "#5793f3"
+                }
+            },
+        },
+        yAxis: {
+            axisLine: {
+                lineStyle: {
+                    color: "#5793f3"
+                }
+            },
+        },
+        series: [{
+            name: 'bar',
+            type: 'bar',
+            data: data1,
+            animationDelay: function (idx) {
+                return idx * 10;
+            },
+            itemStyle : {  
+                normal : {  
+                    color:'#00FF00',  //圈圈的颜色
+                                    lineStyle:{  
+                                        color:'#00FF00'  //线的颜色
+                                    }  
+                }  
+            },  
+        }, {
+            name: 'bar2',
+            type: 'bar',
+            data: data2,
+            itemStyle : {  
+                normal : {  
+                    color:'#e33100',
+                    lineStyle:{  
+                        color:'#e33100'  
+                    }  
+                }  
+            },  
+            animationDelay: function (idx) {
+                return idx * 10 + 100;
+            }
+        }],
+        animationEasing: 'elasticOut',
+        animationDelayUpdate: function (idx) {
+            return idx * 5;
+        }
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+}
+
+function chart_6 () {
+    var myChart = echarts.init(document.getElementById('chart6'));
+    option = {
+        title: {
+            text: '折线图堆叠',
+            textStyle: {
+                color: '#fff',
+                fontSize: '0.2rem',
+                fontWeight: 'normal',
+
+            },
+        },
+        tooltip: {
+            trigger: 'axis'
+        },
+        legend: {
+            show: false
+            // data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        toolbox: {
+            // feature: {
+            //     saveAsImage: {}
+            // }
+        },
+        xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['周一','周二','周三','周四','周五','周六','周日'],
+            axisLine: {
+                lineStyle: {
+                    color: "#5793f3"
+                }
+            },
+        },
+        yAxis: {
+            type: 'value',
+            axisLine: {
+                lineStyle: {
+                    color: "#5793f3"
+                }
+            },
+        },
+        series: [
+            {
+                name:'邮件营销',
+                type:'line',
+                stack: '总量',
+                data:[120, 132, 101, 134, 90, 130, 90]
+            },
+            {
+                name:'联盟广告',
+                type:'line',
+                stack: '总量',
+                data:[220, 182, 191, 234, 290, 220, 180]
+            },
+            {
+                name:'视频广告',
+                type:'line',
+                stack: '总量',
+                data:[150, 232, 201, 154, 190, 130, 110]
+            }
+        ]
+    };
+    
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+}
+
+chart_5();
+chart_6();
