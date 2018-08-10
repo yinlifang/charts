@@ -425,7 +425,7 @@
 <script src="js/china.js"></script>
 <script src="js/hunan.js"></script>
 <script>
-    var bodyHeight = document.body.clientHeight;
-    $('.data_main')[0].style.height = (bodyHeight-200)+'px';
+    var bodyHeight = $(window).height();
+    $('.data_main')[0].style.height = (bodyHeight-120)+'px';
 </script>
 </html>

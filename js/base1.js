@@ -919,36 +919,6 @@ $('#citys').on('click', 'li', function () {
     }
 })
 
-//寄派件选择
-$("#barType").on('click', 'li', function () {
-    $(this).addClass('active').siblings('li').removeClass('active');
-    $('#barTitle').html($(this).html() + '数据');
-    $('#tabBtn').data('state', $(this).data('value'));
-    if ($(this).data('value') == 1) {
-        $('.table1').eq(0).show().siblings('table').hide();
-    } else if ($(this).data('value') == 2) {
-        $('.table1').eq(1).show().siblings('table').hide();
-    }
-    chart3($(this).data('value'), 0);
-    chart4(chart4Data, $(this).data('value'), 0);
-})
-
-//寄派件选择
-$("#barTypes").on('click', 'li', function () {
-    $(this).addClass('active').siblings('li').removeClass('active');
-    $('#barTitles').html($(this).html() + '数据');
-    $('#tabBtns').data('state', $(this).data('value'));
-    if ($(this).data('value') == 1) {
-        $('.table2').eq(0).show().siblings('table').hide();
-    } else if ($(this).data('value') == 2) {
-        $('.table2').eq(1).show().siblings('table').hide();
-    }
-    chart3($(this).data('value'), 1);
-    chart4(chart4Data, $(this).data('value'), 1);
-
-})
-
-
 function chart3(type, chartType) {
     var myChart = echarts.init(document.getElementById('chart3'));
     var myCharts = echarts.init(document.getElementById('chart3s'));
@@ -1606,231 +1576,6 @@ function dateCss() {
     $('#laydate_box').attr('style', cssStr);
 }
 
-
-
-//chart4Data模拟数据
-var chart4Data = [{
-    'name': "天津市",
-    'value': 178546
-    }, {
-    'name': "湖南省",
-    'value': 125687
-    }, {
-    'name': "福建省",
-    'value': 78452
-    }, {
-    'name': "北京市",
-    'value': 57841
-    }, {
-    'name': "江苏省",
-    'value': 45879
-    }, {
-    'name': "海南",
-    'value': 28584
-    }, {
-    'name': "四川省",
-    'value': 14852
-    }, {
-    'name': "浙江省",
-    'value': 12589
-    }, {
-    'name': "重庆市",
-    'value': 5261
-    }, {
-    'name': "香港特别行政区",
-    'value': 2563
-    }, {
-    'name': "内蒙古",
-    'value': 856
-    }]
-chart4(chart4Data, 1, '');
-
-function chart4(data, type, chartType) {
-    var str = '<li><span></span><p>城市</p><p>派件</p></li>';
-    for (var i = 0; i < 10; i++) {
-        str += '<li><span>' + (i + 1) + '</span><p>' + data[i].name + '</p><p>' + data[i].value + '</p></li>';
-    }
-
-    var s_data = [];
-    var myChart = echarts.init(document.getElementById('chart4'));
-    var myCharts = echarts.init(document.getElementById('chart4s'));
-    window.addEventListener('resize', function () {
-        myChart.resize();
-        myCharts.resize();
-    });
-
-
-    function formtGCData(geoData, data, srcNam, dest) {
-        var tGeoDt = [];
-        if (dest) {
-            for (var i = 0, len = data.length; i < len; i++) {
-                if (srcNam != data[i].name) {
-                    tGeoDt.push({
-                        coords: [geoData[srcNam], geoData[data[i].name]],
-                    });
-                }
-            }
-        } else {
-            for (var i = 0, len = data.length; i < len; i++) {
-                if (srcNam != data[i].name) {
-                    tGeoDt.push({
-                        coords: [geoData[data[i].name], geoData[srcNam]],
-                    });
-                }
-            }
-        }
-        return tGeoDt;
-    }
-
-    function formtVData(geoData, data, srcNam) {
-        var tGeoDt = [];
-        for (var i = 0, len = data.length; i < len; i++) {
-            var tNam = data[i].name
-            if (srcNam != tNam) {
-                tGeoDt.push({
-                    name: tNam,
-                    symbolSize: 2,
-                    itemStyle: {
-                        normal: {
-                            color: '#ffeb40',
-                        }
-                    },
-                    value: geoData[tNam]
-                });
-            }
-
-        }
-        tGeoDt.push({
-            name: srcNam,
-            value: geoData[srcNam],
-            symbolSize: 5,
-            itemStyle: {
-                normal: {
-                    color: '#2ef358',
-                }
-            }
-
-        });
-        return tGeoDt;
-    }
-
-    var planePath = 'pin';
-    if (type == 2) {
-        s_data.push({
-            type: 'lines',
-            zlevel: 2,
-            mapType: 'china',
-            symbol: 'none',
-            effect: {
-                show: true,
-                period: 1.5,
-                trailLength: 0.1,
-                //                color: '#ffeb40',
-                color: '#2ef358',
-                symbol: planePath,
-                symbolSize: 6,
-                trailLength: 0.5
-
-            },
-            lineStyle: {
-                normal: {
-                    color: '#2ef358',
-                    width: 1,
-                    opacity: 0.4,
-                    curveness: 0.2
-                }
-            },
-            data: formtGCData(geoCoordMap, data, '珠海', true)
-        })
-
-    } else if (type == 1) {
-        s_data.push({
-            type: 'lines',
-            zlevel: 2,
-            effect: {
-                show: true,
-                period: 1.5,
-                trailLength: 0.1,
-                //                color: '#2ef358',
-                color: '#ffeb40',
-                symbol: planePath,
-                symbolSize: 6,
-                trailLength: 0.5
-            },
-            lineStyle: {
-                normal: {
-                    color: '#ffeb40',
-                    width: 1,
-                    opacity: 0.4,
-                    curveness: 0.2
-                }
-            },
-            data: formtGCData(geoCoordMap, data, '珠海', false)
-        }, {
-
-            type: 'effectScatter',
-            coordinateSystem: 'geo',
-            zlevel: 2,
-            rippleEffect: {
-                period: 4,
-                scale: 2.5,
-                brushType: 'stroke'
-            },
-            symbol: 'none',
-            symbolSize: 4,
-            itemStyle: {
-                normal: {
-                    color: '#fff'
-                }
-            },
-
-            data: formtVData(geoCoordMap, data, '珠海')
-        })
-    }
-
-    var option = {
-        tooltip: {
-            trigger: 'item',
-        },
-        geo: {
-            map: 'china',
-            label: {
-                show: true,
-                position: 'insideLeft',
-                color: 'white',
-                fontSize: '10',
-                emphasis: {
-                    show: true
-                }
-            },
-            roam: true,
-            silent: true,
-            itemStyle: {
-                normal: {
-                    areaColor: 'transparent',
-                    borderColor: '#0e94eb',
-                    shadowBlur: 10,
-                    shadowColor: '#0e94ea'
-                }
-            },
-            left: 10,
-            right: 10
-        },
-        series: s_data
-    };
-    if (chartType === '') {
-        $('.ranking-box').html(str);
-        myChart.setOption(option);
-        myCharts.setOption(option);
-    } else if (chartType === 0) {
-        $('.center-bottom .ranking-box').html(str);
-        myChart.setOption(option);
-    } else if (chartType === 1) {
-        $('.pop-data .ranking-box').html(str);
-        myCharts.setOption(option);
-    }
-}
-
 $('.close-pop').on('click', function () {
     $(this).parent().parent().hide().find('.cont-div').attr('style', 'visibility: hidden');
 })
@@ -2079,5 +1824,62 @@ function chart_6 () {
     });
 }
 
+function chart7 () {
+    var myChart = echarts.init(document.getElementById('chart7'));
+    option = {
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: "#ffffff"
+                    }
+                },
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: "#ffffff"
+                    }
+                },
+            }
+        ],
+        series : [
+            {
+                name:'直接访问',
+                type:'bar',
+                barWidth: '60%',
+                data:[10, 52, 200, 334, 390, 330, 220]
+            }
+        ]
+    };
+     // 使用刚指定的配置项和数据显示图表。
+     myChart.setOption(option);
+     window.addEventListener("resize", function () {
+         myChart.resize();
+     });
+}
+
 chart_5();
 chart_6();
+chart7();

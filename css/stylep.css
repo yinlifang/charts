@@ -537,15 +537,23 @@ pre {
 }
 
 .center-bottom-top1,.center-bottom-top2 {
-    width: 49%;
-    height: 50%;
+    width: 44%;
+    height:  calc(50% - 20px);
+    float: left;
+}
+
+.center-bottom-top2 {
+    width: 50%;
+    height:  calc(50% - 10px);
     float: left;
 }
 
 .center-bottom-bottom {
     width: 100%;
-    height: 50%;
+    height: calc(50% - 20px);
     float: left;
+    background-color: rgba(14, 148, 234, 0.2);
+    border: 1px solid #0E94EA;
 }
 
 .center-bottom>.city-data {
