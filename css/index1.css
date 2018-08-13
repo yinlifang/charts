@@ -352,27 +352,32 @@
     left: 20px;
 }
 
-.data_bottom div .main_table tr,.main_table table tr{
+.data_bottom div .main_table tr,.center-left table tr{
     height: 28px;
 }
-.data_bottom div .main_table,.main_table{
+.data_bottom div .main_table,.center-left .main_table{
     width: 100%;
     margin-top: 20px;
 }
-.data_bottom div .main_table table,.main_table table{
+.data_bottom div .main_table table,.center-left table{
     width: 100%;
 }
-.data_bottom div .main_table thead tr,.main_table table thead tr{
+.data_bottom div .main_table thead tr,.center-left table thead tr{
     height: 42px;
 }
-.data_bottom div .main_table th,.main_table table th{
+.data_bottom div .main_table th,.center-left table th{
     font-size: 12px;
     font-weight: normal;
     color:#61d2f7;
     text-align: center;
 }
+.data_bottom div .main_table th:nth-child(1),.center-left table th:nth-child(1){
 
-.data_bottom div .main_table td,.main_table table td{
+}
+.data_bottom div .main_table th:nth-child(2),.center-left table th:nth-child(2){
+
+}
+.data_bottom div .main_table td,.center-left table td{
     color:#fff;
     font-size: 10px;
     text-align: center;
@@ -380,9 +385,9 @@
 .data_bottom div .main_table tbody tr:nth-child(1),
 .data_bottom div .main_table tbody tr:nth-child(3),
 .data_bottom div .main_table tbody tr:nth-child(5),
-.main_table tbody tr:nth-child(1),
-.main_table tbody tr:nth-child(3),
-.main_table tbody tr:nth-child(5){
+.center-left tbody tr:nth-child(1),
+.center-left tbody tr:nth-child(3),
+.center-left tbody tr:nth-child(5){
     background-color: #072951;
     box-shadow:-10px 0px 15px #2C58A6 inset,   /*左边阴影*/
     10px 0px 15px #2C58A6 inset;  /*右边阴影*/

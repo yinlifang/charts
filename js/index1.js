@@ -1017,9 +1017,9 @@ $(function () {
                 }
             },
             grid: {
-                top: 40,
-                left: 20,
-                right: 20,
+                top: 80,
+                left: 60,
+                right: 60,
                 bottom: 20,
                 containLabel: true                
             },
@@ -1027,7 +1027,7 @@ $(function () {
                 {
                     name: '人口统计',
                     type: 'pie',
-                    radius: ['50%', '70%'],
+                    radius: ['28%', '45%'],
                     selectedMode: 'single',
                     label: {
                         normal: {
@@ -1040,7 +1040,7 @@ $(function () {
                             value:1548,
                             name: '常住人口', 
                             label: {                                                   
-                                formatter: ' {b}： {d}%  ',                       
+                                formatter: '{d}%  ',                       
                             }, 
                             itemStyle: {                               
                                 color: {
@@ -1061,7 +1061,7 @@ $(function () {
                             value:1035, 
                             name: '流动人口',
                             label: {                                                   
-                                formatter: '{b}： {d}%  ',                       
+                                formatter: '{d}%  ',                       
                             }, 
                             itemStyle: {                               
                                 color: {
