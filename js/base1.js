@@ -291,15 +291,23 @@ function chart1() {
     var data = [{
         name: '顺丰',
         value: 192581,
-        percent: '30.8721',
+        percent: '19.61',
     }, {
         name: '京东',
         value: 215635,
-        percent: '34.076',
+        percent: '21.96',
     }, {
         name: 'EMS',
         value: 224585,
-        percent: '35.49',
+        percent: '2.87',
+    }, {
+        name: '中通',
+        value: 224585,
+        percent: '7',
+    }, {
+        name: '大通',
+        value: 124585,
+        percent: '2.69',
     }];
     var myChart = echarts.init(document.getElementById('pie'));
     var myChart1 = echarts.init(document.getElementById('pie1'));
@@ -391,16 +399,16 @@ function chart1() {
             confine: true,
             formatter: "{a} <br/>{b}: {c} ({d}%)"
         },
-        toolbox: {
-            feature: {
-                dataView: {show: true, readOnly: false}
-            }
-        },
+        // toolbox: {
+        //     feature: {
+        //         dataView: {show: true, readOnly: false}
+        //     }
+        // },
         series: [
         // 主要展示层的
             {
-                radius: ['50%', '85%'],
-                center: ['50%', '50%'],
+                radius: ['30%', '45%'],
+                center: ['40%', '50%'],
                 type: 'pie',
                 label: {
                     normal: {
@@ -423,24 +431,12 @@ function chart1() {
         },
         // 边框的设置
             {
-                radius: ['45%', '50%'],
-                center: ['50%', '50%'],
+                radius: ['25%', '30%'],
+                center: ['40%', '50%'],
                 type: 'pie',
                 label: {
-                    normal: {
-                        show: false
-                    },
-                    emphasis: {
-                        show: false
-                    }
-                },
-                labelLine: {
-                    normal: {
-                        show: false
-                    },
-                    emphasis: {
-                        show: false
-                    }
+                    color: "#fff",
+                    formatter: '{d}%'
                 },
                 animation: false,
                 tooltip: {
@@ -1879,6 +1875,152 @@ function chart7 () {
          myChart.resize();
      });
 }
+
+
+
+//渐变半圆进度
+var percent =50; //百分数
+var color_percent0 = '',
+    color_percent100 = '',
+    dotArray = [];
+
+
+calculateDot(percent)//80%显示4个点，
+
+
+function calculateDot(data) {
+    if (data <= 20) {
+        dotArray.push(80)
+        color_percent0 = 'rgba(12,255,0,1)'
+        color_percent100 = 'rgba(12,255,0,.3)'
+    }else if (data > 20&&data<=40) {
+        dotArray.push(...[80,80])
+        color_percent0 = 'rgba(12,255,0,1)'
+        color_percent100 = 'rgba(12,255,0,.3)'
+    }else if (data > 40&&data<=60) {
+        dotArray.push(...[80,80,80])
+         color_percent0 = 'rgba(255,123,0,1)'
+        color_percent100 = 'rgba(255,123,0,.3)'
+    }else if (data > 60&&data<=80) {
+        dotArray.push(...[80,80,80,80])
+         color_percent0 = 'rgba(255,0,36,1)'
+        color_percent100 = 'rgba(255,0,36,.3)'
+    }else if (data > 80&&data<=100) {
+        dotArray.push(...[80,80,80,80,80])
+         color_percent0 = 'rgba(255,0,36,1)'
+        color_percent100 = 'rgba(255,0,36,.3)'
+    }
+
+}
+
+option = {
+    series: [{
+            "name": '',
+            "type": 'pie',
+            "radius": ['50%', '70%'],
+            "avoidLabelOverlap": false,
+            "startAngle": 225,
+            "color": [{
+                type: 'linear',
+                x: 0,
+                y: 0,
+                x2: 0.8,
+                y2: 1,
+                colorStops: [{
+                    offset: 0,
+                    color: color_percent0 // 0% 处的颜色
+                }, {
+                    offset: 1,
+                    color: color_percent100 // 100% 处的颜色
+                }],
+                globalCoord: false // 缺省为 false
+            }, 'none'],
+            "hoverAnimation": false,//是否开启 hover 在扇区上的放大动画效果。
+            "legendHoverLink": false,//是否启用图例 hover 时的联动高亮。
+            "label": {
+                "normal": {
+                    "show": false,
+                    "position": 'center'
+                },
+                "emphasis": {
+                    "show": true,
+                    "textStyle": {
+                        "fontSize": '10',
+                        "fontWeight": 'bold'
+                    }
+                }
+            },
+            "labelLine": {
+                "normal": {
+                    "show": false
+                }
+            },
+            "data": [{
+                "value": 75,
+                "name": '1'
+            }, {
+                "value": 25,
+                "name": '2'
+            }]
+        },{
+            "name": '',
+            "type": 'pie',
+            "radius": ['50%', '70%'],
+            "avoidLabelOverlap": false,
+            "startAngle": 315,
+            "color": ['rgba(34,34,34,.9)', "#ff7a00", "transparent"],
+            "hoverAnimation": false,
+            "legendHoverLink": false,
+            "clockwise": false,//饼图的扇区是否是顺时针排布。
+            "itemStyle": {
+                "normal": {
+                    "borderColor": "transparent",
+                    "borderWidth": "20"
+                },
+                "emphasis": {
+                    "borderColor": "transparent",
+                    "borderWidth": "20"
+                }
+            },
+            "z": 10,
+            "label": {
+                "normal": {
+                    "show": false,
+                    "position": 'center'
+                },
+
+            },
+            "labelLine": {
+                "normal": {
+                    "show": false
+                }
+            },
+            "data": [{
+                "value": (100 - percent) * 270 / 360,
+
+                "label": {
+                    normal: {
+                        formatter: percent + '%',
+                        position: 'center',
+                        show: true,
+                        textStyle: {
+                            fontSize: '90',
+                            fontWeight: 'normal',
+                            color: '#fff'
+                        }
+                    }
+                },
+                "name": ''
+            }, {
+                "value": 1,
+                "name": ''
+            }, {
+                "value": 100 - (100 - percent) * 270 / 360,
+                "name": ''
+            }]
+        }
+    ]
+};
 
 chart_5();
 chart_6();
