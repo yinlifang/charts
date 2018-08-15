@@ -1035,7 +1035,7 @@ $(function () {
                             name: '常住人口',  
                             itemStyle: {                               
                                 color: {
-                                    type: 'radial',
+                                    type: 'linner',
                                     x: 0,
                                     y: 0.5,
                                     r: 1,

@@ -45,9 +45,9 @@
                     <table>
                         <thead>
                         <tr>
-                            <th>载客汽车(万辆)</th>
-                            <th>载货汽车(万辆)</th>
-                            <th>汽车拥有量(万辆)</th>
+                            <th>载客汽车</th>
+                            <th>载货汽车</th>
+                            <th>汽车拥有量</th>
                             <th>日期</th>
                         </tr>
                         </thead>
@@ -75,12 +75,6 @@
                             <td>131.48</td>
                             <td>134.45</td>
                             <td>2015年</td>
-                        </tr>
-                        <tr>
-                            <td>3.23</td>
-                            <td>99.99</td>
-                            <td>103.22</td>
-                            <td>2014年</td>
                         </tr>
                         </tbody>
                     </table>
@@ -121,46 +115,6 @@
                 </div>
             </div>
             <div class="left-bottom" class="select">
-                <!--<div class="title-box">
-                    <h6>南磨房寄派件数据</h6>
-                    <img class="line-img" src="images/line-blue.png" alt="">
-                    <button id="filBtn"><img src="images/select_icon.png" alt="">筛选</button>
-                </div>
-                <div class="chart-box">
-                    <div class="filter-con" id="filCon" data-type="1">
-                        <div class="select" tabindex="0" hidefocus="true">
-                            <div class="select-div">
-                                派件
-                            </div>
-                            <ul class="select-ul">
-                                <li class="active" data-value="1">派件</li>
-                                <li data-value="2">寄件</li>
-                            </ul>
-                        </div>
-                        <div class="select" tabindex="0" hidefocus="true">
-                            <div class="select-div">
-                                公司
-                            </div>
-                            <ul class="select-ul company">
-                                <li class="active" data-value="">公司</li>
-                                <li data-value="1">顺丰</li>
-                                <li data-value="2">京东</li>
-                                <li data-value="2">EMS</li>
-                            </ul>
-                        </div>
-                        <div class="select" tabindex="0" hidefocus="true">
-                            <div class="select-div">
-                                快件类型
-                            </div>
-                            <ul class="select-ul">
-                                <li class="active" data-value="">快件类型</li>
-                                <li data-value="0">文件</li>
-                                <li data-value="1">物品</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div id="gdMap" class="gd-map"></div>
-                </div>-->
                 <!--左上边框-->
                 <div class="t_line_box">
                     <i class="t_l_line"></i> 
@@ -213,118 +167,180 @@
                             <td>140.61</td>
                             <td>2016年</td>
                         </tr>
-                        <tr>
-                            <td>2.97</td>
-                            <td>131.48</td>
-                            <td>134.45</td>
-                            <td>2015年</td>
-                        </tr>
-                        <tr>
-                            <td>3.23</td>
-                            <td>99.99</td>
-                            <td>103.22</td>
-                            <td>2014年</td>
-                        </tr>
+                        
                         </tbody>
                     </table>
                 </div>
             </div>
+            <div class="left-footer" class="select">
+                    <!--左上边框-->
+                    <div class="t_line_box">
+                        <i class="t_l_line"></i> 
+                        <i class="l_t_line"></i> 
+                    </div> 
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i> 
+                        <i class="r_t_line"></i> 
+                    </div> 
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i> 
+                        <i class="b_l_line"></i> 
+                    </div> 
+                        <!--右下边框-->
+                        <div class="t_line_box">
+                        <i class="r_b_line"></i> 
+                        <i class="b_r_line"></i> 
+                    </div>
+                    <div class="page_title">
+                       南磨坊汽车
+                    </div>
+                    <div class="main_table3">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>2.53</td>
+                                <td>142.65</td>
+                                <td>145.18</td>
+                                <td>2311</td>
+                            </tr>
+                            <tr>
+                                <td>2.52</td>
+                                <td>139.95</td>
+                                <td>142.47</td>
+                                <td>123</td>
+                            </tr>
+                            <tr>
+                                <td>2.12312365</td>
+                                <td>1373123.96</td>
+                                <td>1403213.61</td>
+                                <td>3213123</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
         </div>
         <div class="box-center">
             <div class="center-top">
-                <h1>南磨房监控平台</h1>
+                <div class="center-tit"><h1>南磨房监控平台</h1></div>
+                <div class="chart-map" id="chartMap">
+
+                </div>
             </div>
             <div class="center-center">
-               <div>
-               </div>
-               
-               
+               <div class="page_title">
+                   南磨坊汽车
+                </div>
+                <div class="center-pie-box">
+                    <div class="center-pie" id="chartPie1"></div>
+                    <div class="center-pie" id="chartPie2"></div>
+                    <div class="center-pie" id="chartPie3"></div>
+                </div>
             </div>
             <div class="center-bottom">
-                <div class="center-bottom-top1" id="chart5">
+                <!-- <div class="center-bottom-top1" id="chart5">
                     
                 </div>
                 <div class="center-bottom-top2" id="chart6"></div>
-                <div class="center-bottom-bottom" id="chart7"></div>
+                <div class="center-bottom-bottom" id="chart7"></div> -->
+                <!--左上边框-->
+                <div class="t_line_box">
+                        <i class="t_l_line"></i> 
+                        <i class="l_t_line"></i> 
+                    </div> 
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i> 
+                        <i class="r_t_line"></i> 
+                    </div> 
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i> 
+                        <i class="b_l_line"></i> 
+                    </div> 
+                        <!--右下边框-->
+                        <div class="t_line_box">
+                        <i class="r_b_line"></i> 
+                        <i class="b_r_line"></i> 
+                    </div>
+                    <div class="page_title">
+                       南磨坊汽车
+                    </div>
+                    <div class="main_table">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>载客汽车(万辆)</th>
+                                <th>载货汽车(万辆)</th>
+                                <th>汽车拥有量(万辆)</th>
+                                <th>日期</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>2.53</td>
+                                <td>142.65</td>
+                                <td>145.18</td>
+                                <td>2018年</td>
+                            </tr>
+                            <tr>
+                                <td>2.52</td>
+                                <td>139.95</td>
+                                <td>142.47</td>
+                                <td>2017年</td>
+                            </tr>
+                            <tr>
+                                <td>2.65</td>
+                                <td>137.96</td>
+                                <td>140.61</td>
+                                <td>2016年</td>
+                            </tr>
+                            
+                            </tbody>
+                        </table>
+                    </div>
             </div>
 
         </div>
         <div class="box-right">
             <div class="right-top">
-                <div class="title-box">
-                    <h6 id="barTitle">派件数据</h6>
-                    <img class="line-img" src="images/line-blue.png" alt="">
-                    <button data-state=1 id="tabBtn"><img src="images/chart_icon.png" alt=""><span>图表</span></button>
-                </div>
-                <p class="unit">单位：件</p>
-                <div class="chart-box">
-                    <div id="chart3" style="width:100%;height:100%;"></div>
-                </div>
-                <div class="data-box" style="display:none;">
-                    <table class="table1">
-                        <tr>
-                            <td>入库件</td>
-                            <td colspan="3" class="table-data dph-data1">0</td>
-                        </tr>
-                        <tr class="bg-color">
-                            <td rowspan="2">在库件</td>
-                            <td rowspan="2" class="table-data dph-data2">0</td>
-                            <td>正常件</td>
-                            <td class="table-data dph-data3">0</td>
-                        </tr>
-                        <tr class="bg-color">
-                            <td>滞留件</td>
-                            <td class="table-data dph-data5">0</td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">出库件</td>
-                            <td rowspan="2" class="dph-data6">0</td>
-                            <td>派送件</td>
-                            <td class="table-data dph-data7">0</td>
-                        </tr>
-                        <tr>
-                            <td>自提件</td>
-                            <td class="table-data dph-data8">0</td>
-                        </tr>
-                        <tr class="bg-color">
-                            <td>退签件</td>
-                            <td colspan="3" class="table-data dph-data9">0</td>
-                        </tr>
-                        <tr>
-                            <td>丢失件</td>
-                            <td colspan="3" class="table-data dph-data4">0</td>
-                        </tr>
-                    </table>
-                    <table class="table1" style="display:none;">
-                        <tr>
-                            <td>入库件</td>
-                            <td colspan="3" class="table-data mail-data1">1</td>
-                        </tr>
-                        <tr class="bg-color">
-                            <td rowspan="2">在库件</td>
-                            <td rowspan="2" class="table-data mail-data2">1</td>
-                            <td>正常件</td>
-                            <td class="table-data mail-data7">1</td>
-                        </tr>
-                        <tr class="bg-color">
-                            <td>滞留件</td>
-                            <td class="table-data mail-data4">1</td>
-                        </tr>
-
-                        <tr>
-                            <td>出库件</td>
-                            <td colspan="3" class="mail-data6">1</td>
-                        </tr>
-                        <tr class="bg-color">
-                            <td>丢失件</td>
-                            <td colspan="3" class="mail-data3">1</td>
-                        </tr>
-                        <tr>
-                            <td>撤销件</td>
-                            <td colspan="3" class="table-data mail-data5">1</td>
-                        </tr>
-                    </table>
-                </div>
+                <!--左上边框-->
+                <div class="t_line_box">
+                        <i class="t_l_line"></i> 
+                        <i class="l_t_line"></i> 
+                    </div> 
+                    <!--右上边框-->
+                    <div class="t_line_box">
+                        <i class="t_r_line"></i> 
+                        <i class="r_t_line"></i> 
+                    </div> 
+                    <!--左下边框-->
+                    <div class="t_line_box">
+                        <i class="l_b_line"></i> 
+                        <i class="b_l_line"></i> 
+                    </div> 
+                        <!--右下边框-->
+                        <div class="t_line_box">
+                        <i class="r_b_line"></i> 
+                        <i class="b_r_line"></i> 
+                    </div>
+                    <div class="page_title">
+                       南磨坊人口
+                    </div>
+                    <div class="right-pie">
+                        <div id="rightPie1"></div>
+                        <div id="rightPie2"></div>
+                    </div>
+                    <div class="page_title">
+                       南磨坊人口
+                    </div>
+                    <div class="right-pie">
+                        <div id="rightPie3"></div>
+                        <div id="rightPie4"></div>
+                    </div>
             </div>
             <div class="right-center">
                 <div class="title-box">

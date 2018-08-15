@@ -229,7 +229,7 @@ pre {
 }
 
 .box-left {
-    width: 36%;
+    width: 38%;
     height: 100%;
     /* background: url(../images/line_img.png) top right repeat-y; */
 }
@@ -243,13 +243,13 @@ pre {
 }
 
 .left-top {
-    width: 90%;
-    height: calc(36% - 90px);
+    width: calc(100% - 30px);
+    height: calc(36% - 80px);
     position: relative;
     border: 1px solid rgba(14, 148, 235, 0.8);
     box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
-    padding: 20px;
-    margin: 10px 5% 20px ;
+    padding: 10px;
+    margin: 10px 15px 15px ;
     box-sizing: border-box;
 }
 
@@ -285,13 +285,13 @@ pre {
 }
 
 .left-center {
-    width: 90%;
-    height: 33%;
+    width: calc(100% - 30px);
+    height: 24%;
     position: relative;
     border: 1px solid rgba(14, 148, 235, 0.8);
     box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
-    padding: 20px;
-    margin: 1% 5%;
+    padding: 10px;
+    margin: 0 15px;
     box-sizing: border-box;
 }
 
@@ -303,7 +303,7 @@ pre {
 }
 
 .pie-data {
-    height: 2.25rem;
+    /* height: 2.25rem; */
     position: absolute;
     margin: auto;
     top: 0;
@@ -319,8 +319,8 @@ pre {
 
 .pie-data p {
     width: 100%;
-    height: 0.45rem;
-    line-height: 0.45rem;
+    /* height: 0.45rem;
+    line-height: 0.45rem; */
     font-size: 0.15rem;
     color: #cdddf7;
     display: flex;
@@ -353,14 +353,26 @@ pre {
 }
 
 .left-bottom {
-    width: 90%;
-    height: calc(31% - 40px);
+    width: calc(100% -30px);
+    height: calc(24% - 30px);
     position: relative;
     position: relative;
     border: 1px solid rgba(14, 148, 235, 0.8);
     box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
-    padding: 20px;
-    margin: 20px 5%;
+    padding: 10px;
+    margin: 15px;
+    box-sizing: border-box;
+}
+
+.left-footer {
+    width: calc(100% -30px);
+    height: calc(16% - 10px);
+    position: relative;
+    position: relative;
+    border: 1px solid rgba(14, 148, 235, 0.8);
+    box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
+    padding: 10px;
+    margin: 0 15px 10px;
     box-sizing: border-box;
 }
 
@@ -403,7 +415,7 @@ pre {
 
 .center-top {
     width: 100%;
-    height: 8.8%;
+    height: 60%;
     position: relative;
     top: 0;
     left: 0;
@@ -411,10 +423,10 @@ pre {
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    flex-wrap: wrap;
 }
 
-.center-top>h1 {
+.center-tit>h1 {
     color: #cdddf7;
     font-size: 0.2rem;
     font-weight: normal;
@@ -425,13 +437,38 @@ pre {
     border: 1px solid rgba(14, 148, 235, 0.8);
 }
 
+.center-tit {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-map {
+    height: calc(100% - 40px);
+    width: 100%;
+}
+
 .center-center {
     width: 100%;
-    height: 15.3%;
+    height: 15%;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
+    flex-flow: row wrap;
     align-items: center;
+    margin-top: 10px;
+}
+
+.center-pie-box {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 20px)
+}
+
+.center-pie {
+    display: inline-flex;
+    width: 33.33%;
+    height: 100%
 }
 
 .weather-box {
@@ -561,8 +598,13 @@ pre {
 
 .center-bottom {
     width: 100%;
-    height: 75.9%;
+    height: calc(25% - 25px);
     position: relative;
+    border: 1px solid rgba(14, 148, 235, 0.8);
+    box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 .center-bottom-top1,.center-bottom-top2 {
@@ -711,96 +753,35 @@ pre {
 }
 
 .box-right {
-    width: 30%;
+    width: 28%;
     height: 100%;
-    background: url(../images/line_img.png) top left repeat-y;
+    /* background: url(../images/line_img.png) top left repeat-y; */
 }
 
 .right-top {
-    width: 100%;
-    height: 41%;
+    width: calc(100% - 30px);
+    height: calc(45% - 75px);
     box-sizing: border-box;
-    padding-top: 0.2rem;
     position: relative;
+    border: 1px solid rgba(14, 148, 235, 0.8);
+    box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
+    padding: 10px;
+    margin: 60px 15px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
-.right-top>.data-box,
-.right-top>.chart-box {
-    top: 1rem;
+.right-pie {
+    width: 100%;
+    height: calc(50% - 18px);
+    display: flex;
 }
 
-.table1 {
-    font-size: 0.16rem;
-    border: 1px solid #0e94ea;
-    border-top: none;
-    border-right: none;
-    margin: auto;
-}
-
-.table1 tr {
-    border-top: 1px solid #0e94ea;
-    background: rgba(14, 148, 234, 0.1);
-}
-
-.table1 tr.bg-color {
-    background: rgba(14, 148, 234, 0.2);
-}
-
-.table1 tr td {
-    border-right: 1px solid #0e94ea;
-    height: 0.4rem;
-    line-height: 0.4rem;
-    color: #cdddf7;
-    text-align: center;
-}
-
-.table1 tr td.data-table {
-    color: #fff;
-}
-
-.table1 tr td:nth-child(2n+1) {
-    width: 1rem;
-}
-
-.table1 tr td:nth-child(2n) {
-    width: 1.4rem;
-}
-
-.table2 {
-    font-size: 0.16rem;
-    border: 1px solid #0e94ea;
-    border-top: none;
-    border-right: none;
-    margin: auto;
-}
-
-.table2 tr {
-    border-top: 1px solid #0e94ea;
-    background: rgba(14, 148, 234, 0.1);
-}
-
-.table2 tr.bg-color {
-    background: rgba(14, 148, 234, 0.2);
-}
-
-.table2 tr td {
-    border-right: 1px solid #0e94ea;
-    height: 0.6rem;
-    line-height: 0.6rem;
-    color: #cdddf7;
-    text-align: center;
-}
-
-.table2tr td.data-table {
-    color: #fff;
-}
-
-.table2 tr td:nth-child(2n+1) {
-    width: 1.8rem;
-}
-
-.table2 tr td:nth-child(2n) {
-    width: 2.5rem;
+.right-pie>div {
+    display: inline-flex;
+    width: 50%;
+    height: 100%;
 }
 
 .right-center {
@@ -1574,8 +1555,8 @@ pre {
 
 .page_title {
     width: 40%;
-    font-size: 16px;
-    line-height: 32px;
+    font-size: 12px;
+    line-height: 18px;
     padding-left: 8px;
     color: #fff;
     border-radius: 4px;
@@ -1587,4 +1568,24 @@ pre {
 
 .box-left .main_table{
     margin-top: 0
+}
+
+.main_table3 table {
+    width: 100%;
+    margin-top: 10px
+}
+
+.main_table3 tr {
+   font-size: 0.2rem;
+   color: #fff;
+   width: 100%
+}
+.main_table3 tr td {
+    color: #fff;
+    width: 20%;
+}
+
+.main_table3 tr:last-child td {
+    color: #0e94eb;
+    width: 20%;
 }
