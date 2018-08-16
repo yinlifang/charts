@@ -49,10 +49,8 @@ function chart1() {
         percent: '2.69',
     }];
     var myChart = echarts.init(document.getElementById('pie'));
-    var myChart1 = echarts.init(document.getElementById('pie1'));
     window.addEventListener('resize', function () {
         myChart.resize();
-        myChart1.resize();
     });
 
     var str = '';
@@ -187,7 +185,6 @@ function chart1() {
     };
 
     myChart.setOption(option);
-    myChart1.setOption(option);
 }
 
 chart1()
@@ -199,102 +196,10 @@ chart1()
 
 
 function chart2(chartType) {
-    var data = [
-        {
-            name: '广州市',
-            value: 120057.34
-            },
-        {
-            name: '韶关市',
-            value: 15477.48
-            },
-        {
-            name: '深圳市',
-            value: 131686.1
-            },
-        {
-            name: '珠海市',
-            value: 6992.6
-            },
-        {
-            name: '汕头市',
-            value: 44045.49
-            },
-        {
-            name: '佛山市',
-            value: 40689.64
-            },
-        {
-            name: '江门市',
-            value: 37659.78
-            },
-        {
-            name: '湛江市',
-            value: 45180.97
-            },
-        {
-            name: '茂名市',
-            value: 5204.26
-            },
-        {
-            name: '肇庆市',
-            value: 21900.9
-            },
-        {
-            name: '惠州市',
-            value: 4918.26
-            },
-        {
-            name: '梅州市',
-            value: 5881.84
-            },
-        {
-            name: '汕尾市',
-            value: 4178.01
-            },
-        {
-            name: '河源市',
-            value: 2227.92
-            },
-        {
-            name: '阳江市',
-            value: 2180.98
-            },
-        {
-            name: '清远市',
-            value: 9172.94
-            },
-        {
-            name: '东莞市',
-            value: 3368
-            },
-        {
-            name: '中山市',
-            value: 306.98
-            },
-        {
-            name: '潮州市',
-            value: 810.66
-            },
-        {
-            name: '揭阳市',
-            value: 542.2
-            },
-        {
-            name: '云浮市',
-            value: 256.38
-            }]
-
     var myChart = echarts.init(document.getElementById('chartMap'));
     window.addEventListener('resize', function () {
         myChart.resize();
     });
-    var yMax = 0;
-    for (var j = 0; j < data.length; j++) {
-        if (yMax < data[j].value) {
-            yMax = data[j].value;
-        }
-    }
         myChart.hideLoading();
         var option = {
             animation: true,
@@ -304,7 +209,6 @@ function chart2(chartType) {
             visualMap: {
                 show: false,
                 min: 0,
-                max: yMax,
                 text: ['高', '低'],
                 orient: 'horizontal',
                 // itemWidth: 15,
@@ -348,11 +252,9 @@ function chart2(chartType) {
                             }
                         }
                     },
-                    data: data,
             }
             ]
         };
-
         myChart.setOption(option);
 }
 chart2();
@@ -523,14 +425,13 @@ function chartPie1 (id , data ,tit) {
             type: 'plain',
             orient: 'vertical',
             right: 10,
-            top: 0,
-            bottom: 0,
-            icon: 'none',
+            top: 'middle',
+            icon: 'pin',
             textStyle: {
                 color: '#fff',
             },
             formatter: function (name) {
-                return '- ' + name;
+                return name;
             },
             data: data
         },
@@ -538,8 +439,8 @@ function chartPie1 (id , data ,tit) {
             {
                 name: data[0].name,
                 type:'pie',
-                radius: ['50%', '70%'],
-                center: ['30%', '50%'],
+                radius: ['50%', '65%'],
+                center: ['25%', '50%'],
                 avoidLabelOverlap: false,
                 "color": color,
                 "avoidLabelOverlap": false,
@@ -579,4 +480,19 @@ rightChartPie('rightPie1', [
     {value:310, name:'常住'},
     {value:234, name:'流动'},
     {value:35, name:'其他'}
-], [ "#5045f6", "#f845f1",'#44aff0','#45dbf7'],)
+], [ "#71f6f9", "#fdac94",'#44aff0','#fff065'],)
+rightChartPie('rightPie2', [
+    {value:335, name:'租户2',},
+    {value:310, name:'常住2'},
+    {value:104, name:'流动2'}
+], [ "#f6d54a", "#ff4343",'#f69846'],)
+rightChartPie('rightPie3', [
+    {value:335, name:'租户2',},
+    {value:310, name:'常住2'},
+    {value:104, name:'流动2'}
+], [ "#f6d54a", "#ff4343",'#f69846'],)
+rightChartPie('rightPie4', [
+    {value:335, name:'租户2',},
+    {value:310, name:'常住2'},
+    {value:104, name:'流动2'}
+], [ "#f6d54a", "#ff4343",'#f69846'],)
