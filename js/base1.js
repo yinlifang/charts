@@ -472,6 +472,8 @@ function chartPie1 (id , data ,tit) {
     });
  }
 
+
+
 chartPie1('chartPie1', 30, '啦啦la')
 chartPie1('chartPie2', 70, '啦啦')
 chartPie1('chartPie3', 99, '啦啦3')
