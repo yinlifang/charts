@@ -187,7 +187,7 @@ pre {
 
 .left-top {
     width: calc(100% - 30px);
-    height: calc(36% - 80px);
+    height: calc(32% - 80px);
     position: relative;
     border: 1px solid rgba(14, 148, 235, 0.8);
     box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
@@ -266,7 +266,7 @@ pre {
 
 .left-bottom {
     width: calc(100% -30px);
-    height: calc(24% - 30px);
+    height: calc(28% - 30px);
     position: relative;
     position: relative;
     border: 1px solid rgba(14, 148, 235, 0.8);
@@ -274,6 +274,10 @@ pre {
     padding: 10px;
     margin: 15px;
     box-sizing: border-box;
+}
+.left-bottom .chart-box {
+    width: 100%;
+    height: calc(100% - 0.3rem)
 }
 
 .left-footer {
@@ -289,7 +293,7 @@ pre {
 }
 
 .box-center {
-    width: 34%;
+    width: 32%;
     height: 100%;
     /*    background: green;*/
 }
@@ -391,7 +395,7 @@ pre {
 }
 
 .box-right {
-    width: 28%;
+    width: 30%;
     height: 100%;
     /* background: url(../images/line_img.png) top left repeat-y; */
 }
@@ -425,11 +429,12 @@ pre {
 .right_title {
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
 }
 
 .right-center {
     width: calc(100% - 30px);
-    height: calc(14% - 15px);
+    height: calc(28% - 15px);
     box-sizing: border-box;
     margin: 0 15px 15px;
     position: relative;
@@ -437,6 +442,11 @@ pre {
     flex-wrap: wrap;
     border: 1px solid rgba(14, 148, 235, 0.8);
     box-shadow: 0 0 10px rgba(14, 148, 235, 0.8);
+}
+
+.right-center .chart-box, .right-bottom .chart-box {
+    width: 100%;
+    height: calc(100% - 0.3rem);
 }
 
 .right-bottom {

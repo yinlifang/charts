@@ -439,8 +439,8 @@ function chartPie1 (id , data ,tit) {
             {
                 name: data[0].name,
                 type:'pie',
-                radius: ['50%', '65%'],
-                center: ['25%', '50%'],
+                radius: ['40%', '55%'],
+                center: ['20%', '50%'],
                 avoidLabelOverlap: false,
                 "color": color,
                 "avoidLabelOverlap": false,
@@ -472,6 +472,266 @@ function chartPie1 (id , data ,tit) {
     });
  }
 
+ function chart4 () {
+    option = {
+        color: ['#3398DB'],
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            top: '20px',
+            left: '3%',
+            right: '4%',
+            bottom: '20px',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                axisTick: {
+                    alignWithLabel: true
+                },
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+            }
+        ],
+        yAxis : [
+            {
+                type : 'value',
+                axisLine: {
+                    lineStyle: {
+                        color: '#fff'
+                    }
+                }
+            }
+        ],
+        series : [
+            {
+                name:'直接访问',
+                type:'bar',
+                barWidth: '60%',
+                data:[10, 52, 200, 334, 390, 330, 220],
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#83bff6'},
+                                // {offset: 0.5, color: '#188df0'},
+                                {offset: 1, color: '#188df0'}
+                            ]
+                        )
+                    },emphasis: {
+                        color: new echarts.graphic.LinearGradient(
+                            0, 0, 0, 1,
+                            [
+                                {offset: 0, color: '#2378f7'},
+                                // {offset: 0.7, color: '#2378f7'},
+                                {offset: 1, color: '#83bff6'}
+                            ]
+                        )
+                    }
+                },
+            }
+        ]
+    };
+    var myChart = echarts.init(document.getElementById('chart4'));
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+    
+ }
+
+function chart5 () {
+    option = {          
+        legend: {
+            top:'middle',
+            data:['意向'],
+        },
+        tooltip: {
+            trigger: 'axis',
+            // triggerOn: 'none',
+            position: function (pt) {
+                return [pt[0], 130];
+            }
+        },
+        xAxis: {
+            type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            },
+            splitLine: {
+                show: false
+            }
+        },
+        yAxis: {
+            name: '套',
+            type: 'value',
+            axisTick: {
+                inside: true
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            },
+            splitLine: {
+                show: false
+            },
+            axisLabel: {
+                inside: true,
+                formatter: '{value}\n'
+            },
+            z: 10
+        },
+        grid: {
+            top: 40,
+            left: 20,
+            right: 20,
+            bottom: 20,
+            containLabel: true                
+        },
+        dataZoom: [{
+            type: 'inside',
+            throttle: 50
+        }],
+        series: [
+            {
+                name:'车辆数量',
+                type:'line',
+                smooth:true,
+                stack: 'a',
+                symbol: 'circle',
+                // symbolSize: 5,
+                sampling: 'average',
+                itemStyle: {
+                    normal: {
+                        color: 'rgba(255,167,77, 0.8)'
+                    }
+                },
+                lineStyle: {
+                    width: 1
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(255,167,77, 0.8)',
+                        }, {
+                            offset: 1,
+                            color: 'rgba(14, 148, 235, 0)'
+                        }])
+                    }
+                },
+                data: [[2012,1000],[2013,3000],[2014,2500],[2015,1988],[2016,2389],[2017,2341],[2018,2339]]
+            }
+    
+        ]
+    };
+
+    var myChart = echarts.init(document.getElementById('chart5'));
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+    
+    // setInterval(function () {
+    //     option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+    //     myChart.setOption(option, true);
+    // },2000);
+    
+}
+
+function chart6(){
+    var myChart = echarts.init(document.getElementById('chart6'));
+    option = {
+        tooltip: {
+            trigger: 'axis'
+        },             
+        grid: {
+            top: 40,
+            left: 20,
+            right: 20,
+            bottom: 20,
+            containLabel: true                
+        },
+        xAxis: {
+            type: 'category',
+            // boundaryGap: false,
+            data: ['2012年','2013年','2014年','2015年','2016年','2017年','2018年'],
+            splitLine: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        yAxis: {
+            name: '人',
+            type: 'value',
+            splitLine: {
+                show: false
+            },
+            axisTick: {
+                inside: true
+            },
+            axisLabel: {
+                inside: true,
+                formatter: '{value}\n'
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            }
+        },
+        series: [
+            {
+                name:'重点人员',
+                type:'line',
+                smooth: true,
+                data:[3961, 4233, 4183, 3633, 3704, 3434, 4535],
+                itemStyle: {
+                    normal: {
+                        color: 'rgba(75,240,255, 0.8)'
+                    }
+                },
+                lineStyle: {
+                    width: 1
+                },
+                areaStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'rgba(75,240,255, 0.8)',
+                        }, {
+                            offset: 1,
+                            color: 'rgba(14, 148, 235, 0)'
+                        }])
+                    }
+                },
+            }
+        ]
+    };
+    myChart.setOption(option);
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+}
 
 
 chartPie1('chartPie1', 30, '啦啦la')
@@ -481,8 +741,7 @@ rightChartPie('rightPie1', [
     {value:335, name:'租户',},
     {value:310, name:'常住'},
     {value:234, name:'流动'},
-    {value:35, name:'其他'}
-], [ "#71f6f9", "#fdac94",'#44aff0','#fff065'],)
+], [ "#71f6f9", "#6666ff",'#44aff0','#fff065'],)
 rightChartPie('rightPie2', [
     {value:335, name:'租户2',},
     {value:310, name:'常住2'},
@@ -492,9 +751,12 @@ rightChartPie('rightPie3', [
     {value:335, name:'租户2',},
     {value:310, name:'常住2'},
     {value:104, name:'流动2'}
-], [ "#f6d54a", "#ff4343",'#f69846'],)
+], [ "#dd7c1b", "#2f89fc",'#e7e6fc'],)
 rightChartPie('rightPie4', [
     {value:335, name:'租户2',},
     {value:310, name:'常住2'},
     {value:104, name:'流动2'}
-], [ "#f6d54a", "#ff4343",'#f69846'],)
+], [ "#2f19c6", "#6666ff",'#1d51a9','#fff065'],);
+chart4();
+chart5();
+chart6();
