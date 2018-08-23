@@ -2,284 +2,85 @@ $(function () {
     echart_1();
     echart_2();
 
-    echart_3();
+    // echart_3();
     echart_4();
 
     echart_map();
     echart_5();
-    echart_6();
-    echart_7();
+    // echart_6();
+    // echart_7();
 
-    //echart_1南磨坊总收入
+    
+    var startColor = ['#0e94eb', '#c440ef', '#efb013', '#2fda07', '#d8ef13', '#2e4af8', '#0eebc4', '#f129b1', '#17defc', '#f86363'];
+    var borderStartColor = ['#0077c5', '#a819d7', '#c99002', '#24bc00', '#b6cb04', '#112ee2', '#00bd9c', '#ce078f', '#00b2cd', '#ec3c3c'];
+    //echart_1重点人员统计
     function echart_1() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('chart_1'));
-        option = {
+        //data 为模拟数据
+        var data = [{
+            name: '重点人员1',
+            value: 19251,
+        }, {
+            name: '重点人员2',
+            value: 21535,
+        }, {
+            name: '重点人员3',
+            value: 22455,
+        }];
+        var option = {
             tooltip: {
                 trigger: 'item',
-                formatter: "{a} <br/>{b} : {c}万元"
+                confine: true,
+                formatter: "{a} <br/>{b}: {c} ({d}%)",
+                textStyle: {
+                    fontSize: 12
+                }
             },
-            calculable: true,
-            grid: {
-                top: 'middle'
+            series: [
+            // 主要展示层的
+                {
+                    radius: ['70%', '80%'],
+                    center: ['50%', '50%'],
+                    type: 'pie',
+                    labelLine: {
+                        show: true,
+                        length: 10,
+                        length2: 10
+                    },
+                    label: {
+                        color: "#fff",
+                        formatter: '{d}%'
+                    },
+                    "color": [ "#0e94eb", "#c440ef",'#efb013','#fff065'],
+                    label: {
+                        normal: {
+                            show: false
+                        },
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        },
+                        emphasis: {
+                            show: false
+                        }
+                    },
+                    name: "重点人员占比",
+                    data: data
             },
-            series: [{
-                name: '',
-                type: 'pie',
-                //起始角度，支持范围[0, 360]
-                startAngle: 0,
-                //饼图的半径，数组的第一项是内半径，第二项是外半径
-                radius: [41, 100.75],
-                //支持设置成百分比，设置成百分比时第一项是相对于容器宽度，第二项是相对于容器高度
-                center: ['50%', '5%'],
-                //是否展示成南丁格尔图，通过半径区分数据大小。可选择两种模式：
-                // 'radius' 面积展现数据的百分比，半径展现数据的大小。
-                //  'area' 所有扇区面积相同，仅通过半径展现数据大小
-                roseType: 'area',
-                //是否启用防止标签重叠策略，默认开启，圆环图这个例子中需要强制所有标签放在中心位置，可以将该值设为 false。
-                avoidLabelOverlap: false,
-                label: {
-                    normal: {
-                        show: true,
-                        formatter: '{c}万元'
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-                labelLine: {
-                    normal: {
-                        show: true,
-                        length2: 1,
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-                data: [{
-                        value: 900.58,
-                        name: '张家口',
-                        itemStyle: {
-                            normal: {
-                                color: '#f845f1'
-                            }
-                        }
-                    },
-                    {
-                        value: 1100.58,
-                        name: '承德',
-                        itemStyle: {
-                            normal: {
-                                color: '#ad46f3'
-                            }
-                        }
-                    },
-                    {
-                        value: 1200.58,
-                        name: '衡水',
-                        itemStyle: {
-                            normal: {
-                                color: '#5045f6'
-                            }
-                        }
-                    },
-                    {
-                        value: 1300.58,
-                        name: '邢台',
-                        itemStyle: {
-                            normal: {
-                                color: '#4777f5'
-                            }
-                        }
-                    },
-                    {
-                        value: 1400.58,
-                        name: '邯郸',
-                        itemStyle: {
-                            normal: {
-                                color: '#44aff0'
-                            }
-                        }
-                    },
-                    {
-                        value: 1500.58,
-                        name: '保定',
-                        itemStyle: {
-                            normal: {
-                                color: '#45dbf7'
-                            }
-                        }
-                    },
-                    {
-                        value: 1500.58,
-                        name: '秦皇岛',
-                        itemStyle: {
-                            normal: {
-                                color: '#f6d54a'
-                            }
-                        }
-                    },
-                    {
-                        value: 116.46,
-                        name: '北京',
-                        itemStyle: {
-                            normal: {
-                                color: '#f69846'
-                            }
-                        }
-                    },
-                    {
-                        value: 1800,
-                        name: '唐山',
-                        itemStyle: {
-                            normal: {
-                                color: '#ff4343'
-                            }
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    },
-                    {
-                        value: 0,
-                        name: "",
-                        itemStyle: {
-                            normal: {
-                                color: 'transparent'
-                            }
-                        },
-                        label: {
-                            show: false
-                        },
-                        labelLine: {
-                            show: false
-                        }
-                    }
-                ]
-            }]
+            
+        ]
         };
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         window.addEventListener("resize", function () {
             myChart.resize();
         });
+        
     }
 
     //echart_2 南磨坊重点房屋统计
@@ -769,30 +570,22 @@ $(function () {
             myChart.resize();
         });        
     }
-    //南磨坊车辆统计
+    //南磨坊常住人口、流动人口曲线图
     function echart_5() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('chart_5'));
-
-        var base = +new Date(2016, 9, 3);
-        var oneDay = 24 * 3600 * 1000;
-        var oneHour = 3600*1000;
-        var valueBase = Math.random() * 300;
+        var valueBase = Math.random() * 50;
         var valueBase2 = Math.random() * 50;
         var data = [];
         var data2 = [];
         
-        for (var i = 1; i < 12; i++) {
-            var nowhour = new Date(base += oneHour);
-            var timeStr = nowhour.getHours();
-        
-            // valueBase = Math.round((Math.random() - 0.5) * 20 + valueBase);
-            // valueBase <= 0 && (valueBase = Math.random() * 300);
-            // data.push([dayStr, valueBase]);
-        
+        for (var i = 1; i <= 12; i++) {
             valueBase2 = Math.round((Math.random() - 0.5) * 20 + valueBase2);
             valueBase2 <= 0 && (valueBase2 = Math.random() * 50);
-            data2.push([nowhour, valueBase2]);
+            valueBase = Math.round((Math.random() - 0.5) * 20 + valueBase2);
+            valueBase <= 0 && (valueBase2 = Math.random() * 50);
+            data2.push([i, valueBase2]);
+            data.push([i,valueBase])
         }
         option = {          
             legend: {
@@ -801,13 +594,9 @@ $(function () {
             },
             tooltip: {
                 trigger: 'axis',
-                // triggerOn: 'none',
-                position: function (pt) {
-                    return [pt[0], 130];
-                }
             },
             xAxis: {
-                type: 'time',
+                type: 'category',
                 axisLine: {
                     lineStyle: {
                         color: '#fff'
@@ -818,7 +607,7 @@ $(function () {
                 }
             },
             yAxis: {
-                name: '辆',
+                name: '人',
                 type: 'value',                
                 axisLine: {
                     lineStyle: {
@@ -829,10 +618,10 @@ $(function () {
                     show: false
                 },
                 axisTick: {
-                    inside: true
+                    // inside: true
                 },
                 axisLabel: {
-                    inside: true,
+                    // inside: true,
                     formatter: '{value}\n'
                 },
                 z: 10
@@ -850,7 +639,7 @@ $(function () {
             }],
             series: [
                 {
-                    name:'车辆数量',
+                    name:'常住人口',
                     type:'line',
                     smooth:true,
                     stack: 'a',
@@ -865,20 +654,48 @@ $(function () {
                     lineStyle: {
                         width: 1
                     },
-                    areaStyle: {
+                    // areaStyle: {
+                    //     normal: {
+                    //         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    //             offset: 0,
+                    //             color: 'rgba(14, 148, 235, 0.8)',
+                    //         }, {
+                    //             offset: 1,
+                    //             color: 'rgba(14, 148, 235, 0)'
+                    //         }])
+                    //     }
+                    // },
+                    data: data2
+                },
+                {
+                    name:'流动人口',
+                    type:'line',
+                    smooth:true,
+                    stack: 'a',
+                    symbol: 'circle',
+                    // symbolSize: 5,
+                    sampling: 'average',
+                    itemStyle: {
                         normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'rgba(14, 148, 235, 0.8)',
-                            }, {
-                                offset: 1,
-                                color: 'rgba(14, 148, 235, 0)'
-                            }])
+                            color: 'rgba(230,197,49, 0.8)'
                         }
                     },
-                    data: data2
+                    lineStyle: {
+                        width: 1
+                    },
+                    // areaStyle: {
+                    //     normal: {
+                    //         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    //             offset: 0,
+                    //             color: 'rgba(230,197,49, 0.8)',
+                    //         }, {
+                    //             offset: 1,
+                    //             color: 'rgba(230,197,49, 0)',
+                    //         }])
+                    //     }
+                    // },
+                    data: data
                 }
-        
             ]
         };
         

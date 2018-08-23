@@ -132,7 +132,6 @@ function chart1() {
     var option = {
         tooltip: {
             trigger: 'item',
-            //            position: ['30%', '50%'],
             confine: true,
             formatter: "{a} <br/>{b}: {c} ({d}%)"
         },
