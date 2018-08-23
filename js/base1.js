@@ -424,7 +424,7 @@ function chartPie1 (id , data ,tit) {
         legend: {
             type: 'plain',
             orient: 'vertical',
-            right: 10,
+            left: '45%',
             top: 'middle',
             icon: 'pin',
             textStyle: {
@@ -485,7 +485,7 @@ function chartPie1 (id , data ,tit) {
             top: '20px',
             left: '3%',
             right: '4%',
-            bottom: '20px',
+            bottom: '40px',
             containLabel: true
         },
         xAxis : [
@@ -552,7 +552,7 @@ function chartPie1 (id , data ,tit) {
  }
 
 function chart5 () {
-    option = {          
+    option = {
         legend: {
             top:'middle',
             data:['意向'],
@@ -599,7 +599,7 @@ function chart5 () {
             top: 40,
             left: 20,
             right: 20,
-            bottom: 20,
+            bottom: 40,
             containLabel: true                
         },
         dataZoom: [{
@@ -664,7 +664,7 @@ function chart6(){
             top: 40,
             left: 20,
             right: 20,
-            bottom: 20,
+            bottom: 40,
             containLabel: true                
         },
         xAxis: {
