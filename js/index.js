@@ -80,7 +80,7 @@ $(function () {
         window.addEventListener("resize", function () {
             myChart.resize();
         });
-        
+
     }
 
     //echart_2 南磨坊重点房屋统计
@@ -654,17 +654,6 @@ $(function () {
                     lineStyle: {
                         width: 1
                     },
-                    // areaStyle: {
-                    //     normal: {
-                    //         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                    //             offset: 0,
-                    //             color: 'rgba(14, 148, 235, 0.8)',
-                    //         }, {
-                    //             offset: 1,
-                    //             color: 'rgba(14, 148, 235, 0)'
-                    //         }])
-                    //     }
-                    // },
                     data: data2
                 },
                 {
@@ -683,17 +672,6 @@ $(function () {
                     lineStyle: {
                         width: 1
                     },
-                    // areaStyle: {
-                    //     normal: {
-                    //         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                    //             offset: 0,
-                    //             color: 'rgba(230,197,49, 0.8)',
-                    //         }, {
-                    //             offset: 1,
-                    //             color: 'rgba(230,197,49, 0)',
-                    //         }])
-                    //     }
-                    // },
                     data: data
                 }
             ]

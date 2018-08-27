@@ -3,8 +3,6 @@
     font-size: 22px;
 }
 .data_content{
-    padding-top: 20px;
-    padding-bottom: 20px;
     display: flex;
     position: absolute;
     left: 0;
@@ -20,12 +18,10 @@
 
 .data_main{
     width: calc(100% - 20px);
-    margin-bottom: 20px;
-    height: calc(65% - 40px);
+    height: calc(65% - 20px);
     display: flex;
     justify-content: space-between;
     overflow: hidden;
-    padding-top: 18px;
     position: relative;
     background: #000001;
 }
@@ -210,7 +206,7 @@
     bottom: 20px;
     display: inline-flex;
     flex-flow: row wrap;
-    right: 0;
+    right: 20px;
     top: 20px;
     /* background: rgba(13, 31, 50, 0.7); */
     background: rgba(14, 148, 234, 0.2);

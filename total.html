@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>物流大数据平台</title>
+    <script type="text/javascript" src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.8&key=f2137cb1b0c3ed91a083821e50dc549b"></script> 
+</head>
+<body>
+    
+    <div class="data-main">
+            <div class="header">
+                    <div class="bg_header">
+                        <div class="header_nav fl t_title">
+                            物流大数据服务平台
+                        </div> 
+                    </div>
+                </div>
+        <!-- <div class="header"><h1>大数据平台</h1></div> -->
+        <div class="data-top">
+            <div class="data-top-center" id="chart_map"></div>
+            <div class="data-top-left">
+                <ul>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10,lal</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10,lal</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10,lal</span>
+                    </li>
+                    <li>
+                        <span>17:00:00</span>
+                        <span>进出车辆9，进出人数10,lal</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="data-top-right">
+                <section>
+                    <h2>社区概况</h2>
+                    <div class="right-con">
+                        <p>
+                            <span>人口总数(人)</span><br>
+                            <span class="text-import">8888888</span>
+                        </p>
+                        <p>
+                            <span>房屋总数(套)</span><br>
+                            <span class="text-import">88888</span>
+                        </p>
+                        <p>
+                            <span>单位总数(个)</span><br>
+                            <span class="text-import">888</span>
+                        </p>
+                    </div>
+                </section>
+                <section>
+                        <h2>人口统计</h2>
+                        <div class="right-con">
+                        <p>
+                            <span>常住人口数(人)</span><br>
+                            <span class="text-import">88888</span>
+                        </p>
+                        <p>
+                            <span>流动人口数(人)</span><br>
+                            <span class="text-import">88888</span>
+                        </p>
+                    </div>
+                    </section>
+                    <section>
+                        <h2>其他</h2>
+                        <div class="right-con">
+                            <p>
+                                <span>重点房屋数(套)</span><br>
+                                <span class="text-import">8888888</span>
+                            </p>
+                            <p>
+                                <span>重点单位数(个)</span><br>
+                                <span class="text-import">88888</span>
+                            </p>
+                        </div>
+                    </section>
+                    <section style="height: 40%;">
+                        <div id="chart_1" style="width: 100%;height: 100%;"></div>
+                    </section>
+            </div>
+        </div>
+        <div class="data-bottom">
+            <section>
+                <h2>重点人员统计</h2>
+                <p class="bottom1-p">
+                    <span>重点人员总数</span>
+                    <span class="text-import">3745</span>
+                </p>
+                <div class="bottom1-chart">
+                    <div class="bottom1-left">
+                        <ul id="personPercent" class="percent-box">
+                            <li>
+                                <span>重点人口1：</span>
+                                <p>
+                                    <span></span>
+                                </p>
+                                <span>35%</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom1-right" id="chart_2">
+
+                    </div>
+                </div>
+                
+            </section>
+            <section>
+                    <h2>年龄段统计</h2>
+                    <div class="bottom2-p">
+                        <p>
+                            <span>总数</span>
+                            <span>3745</span>
+                        </p>
+                        <p>
+                            <span>流动</span>
+                            <span>345</span>
+                        </p>
+                        <p>
+                            <span>常住</span>
+                            <span>1745</span>
+                        </p>
+                    </div>
+                    <div class="bottom2-chart">
+                        <div class="bottom2-center" id="chart_3">
+                            
+                        </div>
+                        <div class="bottom2-bottom" id="chart_4">
+                        </div>
+                    </div>
+            </section>
+            <section>
+                <h2>房屋统计</h2>
+                <div class="bottom3-p">
+                    <p>
+                        <span>社区总数：14</span>
+                        <span>小区总数：72</span>
+                        <span>楼栋总数：687</span>
+                        <span>单元总数：1387</span>
+                        <span>房屋总数：187876</span>
+                        <span>重点房屋数：187</span>
+                    </p>
+                </div>
+                <div class="bottom3-chart" id="chart_5"></div>
+            </section>
+            <section>
+                <!-- 四个分类， 普通单位 、行业场所 、管控物品、重点单位 -->
+                <h2>单位分类统计</h2>
+                <div class="bottom4-p">
+                    <span>单位总数：1928</span><br>
+                    <span>普通单位：128</span>
+                    <span>行业场所：928</span>
+                    <span>管控物品：187</span>
+                    <span>重点单位：198</span>
+                </div>
+                <div class="bottom4-chart" id="chart_6">
+                    
+                </div>
+            </section>
+            <section>
+                <!-- 按照西红门分类（医院、学校等） -->
+                <h2>单位行业统计</h2>
+                <div class="bottom5-chart" id="chart_7">
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/total.js"></script>
+</body>
+</html>
