@@ -526,7 +526,7 @@ var chart4Data = [{
     'value': 856
     }]
 
-    function chart4(data, type, chartType) {
+    function chart4(data, type) {
         var str = '<li><span></span><p>城市</p><p>派件</p></li>';
         for (var i = 0; i < 10; i++) {
             str += '<li><span>' + (i + 1) + '</span><p>' + data[i].name + '</p><p>' + data[i].value + '</p></li>';
@@ -534,10 +534,8 @@ var chart4Data = [{
     
         var s_data = [];
         var myChart = echarts.init(document.getElementById('chart4'));
-        var myCharts = echarts.init(document.getElementById('chart4s'));
         window.addEventListener('resize', function () {
             myChart.resize();
-            myCharts.resize();
         });
     
     
@@ -699,17 +697,8 @@ var chart4Data = [{
             },
             series: s_data
         };
-        if (chartType === '') {
             $('.ranking-box').html(str);
             myChart.setOption(option);
-            myCharts.setOption(option);
-        } else if (chartType === 0) {
-            $('.center-bottom .ranking-box').html(str);
-            myChart.setOption(option);
-        } else if (chartType === 1) {
-            $('.pop-data .ranking-box').html(str);
-            myCharts.setOption(option);
-        }
     }
 
 
@@ -840,6 +829,7 @@ function echart_4() {
     var myChart = echarts.init(document.getElementById('chart_4'))
     window.addEventListener('resize', function () {
         myChart.resize();
+        myCharts.resize();
     });
 
     //    设置背景阴影的参数，获取数据的最大值

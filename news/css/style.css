@@ -829,22 +829,28 @@ pre {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    padding: 5% 0;
+    box-sizing: border-box;
 }
 
 .data-box>.data-number>div {
     width: 100%;
-    height: 33.33%;
+    height: 30%;
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    color: #cdddf7;
 }
 
 
 .data-box>.data-number p {
     display: inline-flex;
     color: #cdddf7;
-    font-size: 0.4rem;
-    line-height: 2.3rem;
+    font-size: 0.2rem;
+    line-height: 0.6rem;
+    height: 0.6rem;
+    width: 33%;
+    justify-content: center;
 }
 
 .right-bottom {
