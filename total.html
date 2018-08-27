@@ -22,8 +22,8 @@
         <!-- <div class="header"><h1>大数据平台</h1></div> -->
         <div class="data-top">
             <div class="data-top-center" id="chart_map"></div>
-            <div class="data-top-left">
-                <ul>
+            <div class="data-top-left" id="news">
+                <ul id="news1">
                     <li>
                         <span>17:00:00</span>
                         <span>进出车辆9，进出人数10</span>
@@ -65,6 +65,7 @@
                         <span>进出车辆9，进出人数10,lal</span>
                     </li>
                 </ul>
+                <div id="news2"></div>
             </div>
             <div class="data-top-right">
                 <section>
@@ -117,7 +118,9 @@
         </div>
         <div class="data-bottom">
             <section>
-                <h2>重点人员统计</h2>
+                <div class="title-box">
+                    <h6>重点人员统计</h6>
+                </div>
                 <p class="bottom1-p">
                     <span>重点人员总数</span>
                     <span class="text-import">3745</span>
@@ -141,7 +144,10 @@
                 
             </section>
             <section>
-                    <h2>年龄段统计</h2>
+                <div class="title-box">
+                    <h6>年龄段统计</h6>
+                </div>
+                    
                     <div class="bottom2-p">
                         <p>
                             <span>总数</span>
@@ -165,7 +171,9 @@
                     </div>
             </section>
             <section>
-                <h2>房屋统计</h2>
+                <div class="title-box">
+                    <h6>房屋统计</h6>
+                </div>
                 <div class="bottom3-p">
                     <p>
                         <span>社区总数：14</span>
@@ -176,11 +184,15 @@
                         <span>重点房屋数：187</span>
                     </p>
                 </div>
-                <div class="bottom3-chart" id="chart_5"></div>
+                <div class="bottom3-chart">
+                    <div style="width: 100%;height: 100%" id="chart_5"></div>
+                </div>
             </section>
             <section>
                 <!-- 四个分类， 普通单位 、行业场所 、管控物品、重点单位 -->
-                <h2>单位分类统计</h2>
+                <div class="title-box">
+                    <h6>单位分类统计</h6>
+                </div>
                 <div class="bottom4-p">
                     <span>单位总数：1928</span><br>
                     <span>普通单位：128</span>
@@ -193,17 +205,39 @@
                 </div>
             </section>
             <section>
+            
                 <!-- 按照西红门分类（医院、学校等） -->
-                <h2>单位行业统计</h2>
+                <div class="title-box">
+                    <h6>单位行业统计</h6>
+                </div>
                 <div class="bottom5-chart" id="chart_7">
                     
                 </div>
             </section>
         </div>
     </div>
-
-    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/echarts.min.js"></script>
     <script src="js/total.js"></script>
+    <script>
+       var speed=30 
+window.onload=function(){
+var news=document.getElementById("news"); 
+var news2=document.getElementById("news2"); 
+var news1=document.getElementById("news1"); 
+news2.innerHTML=news1.innerHTML 
+function Marquee(){ 
+if(news.scrollTop>=news1.offsetHeight){
+news.scrollTop=0; 
+}
+else{ 
+news.scrollTop=news.scrollTop+1;
+} 
+} 
+var MyMar=setInterval(Marquee,speed) 
+news.onmouseover=function(){clearInterval(MyMar)} 
+news.onmouseout=function(){MyMar=setInterval(Marquee,speed)} 
+}
+    </script>
 </body>
 </html>

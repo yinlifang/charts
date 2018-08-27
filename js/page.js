@@ -619,7 +619,7 @@ var chart4Data = [{
                         curveness: 0.2
                     }
                 },
-                data: formtGCData(geoCoordMap, data, '珠海', true)
+                data: formtGCData(geoCoordMap, data, '北京', true)
             })
     
         } else if (type == 1) {
@@ -644,7 +644,7 @@ var chart4Data = [{
                         curveness: 0.2
                     }
                 },
-                data: formtGCData(geoCoordMap, data, '珠海', false)
+                data: formtGCData(geoCoordMap, data, '北京', false)
             }, {
     
                 type: 'effectScatter',
@@ -663,7 +663,7 @@ var chart4Data = [{
                     }
                 },
     
-                data: formtVData(geoCoordMap, data, '珠海')
+                data: formtVData(geoCoordMap, data, '北京')
             })
         }
     
@@ -693,7 +693,9 @@ var chart4Data = [{
                     }
                 },
                 left: 10,
-                right: 10
+                right: 10,
+                top: 10,
+                bottom: 10
             },
             series: s_data
         };

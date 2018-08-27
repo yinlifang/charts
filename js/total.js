@@ -52,17 +52,8 @@ function echart_1() {
                     color: '#fff'
                 }
             },
-            // nameTextStyle: {
-            //     fontSize: '0.1rem',
-            //     lineHeight: '1',
-            //     height: '10px',
-            //     color: '#f00'
-            // },
             splitLine: {
                 show: false
-            },
-            axisTick: {
-                // inside: true
             },
             axisLabel: {
                 // inside: true,
@@ -136,31 +127,23 @@ function echart_2() {
     var data = [{
         name: '重点人员1',
         value: 19251,
-        percent: '12.58%',
+        percent: '17.8%',
     }, {
         name: '重点人员22',
         value: 21535,
-        percent: '14.07%'
+        percent: '19.9%'
     }, {
         name: '重点人员',
         value: 22455,
-        percent: '14.67%'
+        percent: '20.76%'
     }, {
         name: '重点人员3',
         value: 22455,
-        percent: '14.67%'
+        percent: '20.76%'
     }, {
         name: '重点人员4',
         value: 22455,
-        percent: '14.67%'
-    }, {
-        name: '重点人员5',
-        value: 22455,
-        percent: '14.67%'
-    }, {
-        name: '重点人员6',
-        value: 22455,
-        percent: '14.67%'
+        percent: '20.76%'
     }];
     var color = [ '#c440ef', '#efb013', '#2fda07', '#d8ef13', '#2e4af8', '#0eebc4', '#f129b1', '#17defc', '#f86363'];
     var option = {
@@ -267,22 +250,12 @@ function echart_3() {
                 fontSize: 12
             }
         },
-        // title: {
-        //     text: '总数',
-        //     subtext: sumPerson,
-        //     x: '13%',
-        //     y: 'center',
-        //     textStyle: {
-        //         color: '#f2f2f2',
-        //         fontSize: '0.1rem'
-        //     }
-        // },
         legend: {
             type: 'scroll',
             orient: 'vertical',
             right: 10,
-            top: 20,
-            bottom: 20,
+            top: '10',
+            // bottom: 10,
             // data: legendData,
             textStyle: {
                 color: '#f2f2f2',
@@ -292,8 +265,8 @@ function echart_3() {
         series: [
         // 主要展示层的
             {
-                radius: ['30%', '50%'],
-                center: ['20%', '50%'],
+                radius: ['40%', '55%'],
+                center: ['20%', '35%'],
                 type: 'pie',
                 "avoidLabelOverlap": false,
                 "hoverAnimation": false,
@@ -352,7 +325,7 @@ function echart_4 () {
             top: '10',
             left: '3%',
             right: '4%',
-            bottom: '40px',
+            bottom: '40',
             containLabel: true
         },
         xAxis : [
@@ -475,7 +448,7 @@ function echart_5() {
         series: [
         // 主要展示层的
             {
-                radius: ['20%', '30%'],
+                radius: ['0', '30%'],
                 center: ['15%', '30%'],
                 type: 'pie',
                 "avoidLabelOverlap": false,
@@ -536,7 +509,7 @@ function echart_6 () {
             top: '10px',
             left: '3%',
             right: '4%',
-            bottom: '60px',
+            bottom: '120',
             containLabel: true
         },
         xAxis : [
