@@ -290,11 +290,15 @@ var canvas = document.getElementById('canvas'),
   ctx = canvas.getContext('2d'),
   w = canvas.width = window.innerWidth,
   h = canvas.height = window.innerHeight,
-
+ 
   hue = 217,
   stars = [],
   count = 0,
   maxStars = 300;//星星数量
+  window.addEventListener("resize", function () {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+});
 
 var canvas2 = document.createElement('canvas'),
   ctx2 = canvas2.getContext('2d');

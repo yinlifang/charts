@@ -506,10 +506,10 @@ function echart_6 () {
             }
         },
         grid: {
-            top: '10px',
+            top: '30',
             left: '3%',
             right: '4%',
-            bottom: '120',
+            bottom: '50',
             containLabel: true
         },
         xAxis : [
