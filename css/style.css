@@ -159,7 +159,7 @@ pre {
     top: 0;
     left: 0;
     color: #cdddf7;
-    padding-right: 12px;
+    padding: 0 12px;
 }
 
 .select-ul {
@@ -197,7 +197,7 @@ pre {
 }
 
 .data-box {
-    width: 4.9rem;
+    width: 100%;
     position: absolute;
     margin: auto;
     top: 0.42rem;
@@ -205,6 +205,8 @@ pre {
     left: 0;
     right: 0;
 }
+
+
 
 .chart-box {
     position: absolute;
@@ -215,6 +217,33 @@ pre {
     left: 0;
     right: 0;
     height: auto;
+    
+}
+
+.chart-box1 {
+	position: absolute;
+    top: 0.8rem;
+    bottom: 0;
+    width: 100%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    height: auto;
+}
+
+.chart-box  p{
+    font-size:0.15rem;
+    line-height: 0.3rem;
+    color: #fff;
+    padding-top:0.1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.chart-box  p span {
+    margin-right:4px;
+    display: inline-block;
 }
 
 .container-flex {
@@ -240,9 +269,9 @@ pre {
     position: relative;
 }
 
-.left-top>.current-num {
+.left-top>.current-num,.right-bottom>.current-num {
     width: 4.9rem;
-    height: 1.8rem;
+    height: 1.4rem;
     position: absolute;
     margin: auto;
     top: 0;
@@ -251,17 +280,19 @@ pre {
     right: 0;
     background: url(../images/border_bg01.png) top left no-repeat;
     background-size: 100% 100%;
+    padding: 0.2rem 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .left-top>.current-num .select {
     display: inline-block;
-    margin: 0.2rem 4px 0;
 }
 
 .current-num>div {
     width: 100%;
-    height: 0.8rem;
-    line-height: 0.8rem;
     text-align: center;
     /* background: url(../images/title_bg01.png) center center no-repeat; */
     font-size: 0.2rem;
@@ -270,10 +301,17 @@ pre {
     font-weight: 900;
 }
 
+.current-num .text-normal {
+    font-size: 0.25rem;
+    font-weight: normal;
+    color: #0e94ea;
+}
+
 .current-num>p {
     font-size: 0.46rem;
     text-align: center;
     color: white;
+    width: 100%;
 }
 
 .left-center {
@@ -408,7 +446,7 @@ pre {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
 }
 
@@ -480,6 +518,13 @@ pre {
     font-size: 0.16rem;
 }
 
+.center-center-select {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding: 0.2rem 2rem;
+}
+
 .select-box {
     width: 3.4rem;
     height: 1.1rem;
@@ -543,6 +588,14 @@ pre {
     height: 100%;
     margin: auto;
     position: absolute;
+}
+
+.community-data{
+	width: 8.05rem;
+    height: calc(100% - 0.82rem);
+    margin: auto;
+    position: absolute;
+    top: 0.82rem;
 }
 
 .city-box {
@@ -621,7 +674,33 @@ pre {
     background-color: rgba(14, 148, 235, 0.102);
 }
 
-.ranking-box>li {
+.house-list,.company-list {
+	width: 40%;
+    border: 1px solid #0e94ea;
+    position: absolute;
+    left: 7%;
+    top: 0;
+    bottom: 20px;
+    background-color: rgba(14, 148, 235, 0.102);
+    overflow:scroll;
+}
+
+.house-list-box,.company-list-box {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0.4rem;
+	bottom: 0;
+	overflow: scroll;
+}
+
+.company-list {
+	left: 53%;
+}
+
+.house-list-box::-webkit-scrollbar,.company-list-box::-webkit-scrollbar {width:2px;height:2px;}
+
+.ranking-box li {
     width: 100%;
     height: 0.3rem;
     line-height: 0.3rem;
@@ -632,13 +711,17 @@ pre {
     color: rgba(255, 255, 255, .7);
 }
 
-.ranking-box>li>span {
+.ranking-box li>span {
     width: 0;
-    flex-grow: 1;
+    flex-grow: 3;
     text-align: center;
+    color: rgba(255, 255, 255, .7);
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.ranking-box>li>p {
+.ranking-box li>p  {
     width: 0;
     flex-grow: 2;
     color: rgba(255, 255, 255, .7);
@@ -648,18 +731,30 @@ pre {
     white-space: nowrap;
 }
 
-.ranking-box>li:nth-child(2n+1) {
+ li>p:first-child {
+	flex-grow: 1.5;
+}
+
+.ranking-box.company-list li>p {
+	flex-grow: 4;
+}
+
+.ranking-box li:nth-child(2n+1) {
     background: rgba(14, 148, 235, 0.102);
 }
 
-.ranking-box>li:first-child {
-    height: 0.4rem;
-    line-height: 0.4rem;
-    font-size: 0.2rem;
-    background: rgba(14, 148, 235, 0.8);
+.ranking-box-tit {
+	width: 100%;
 }
 
-.ranking-box>li:first-child>p {
+.ranking-box .ranking-box-tit li {
+	height: 0.4rem;
+    line-height: 0.4rem;
+    font-size: 0.15rem;
+    background: rgba(14, 148, 235, 0.5);
+}
+
+.ranking-box .ranking-box-tit li>p,.ranking-box .ranking-box-tit>li>span {
     color: white;
 }
 
@@ -679,7 +774,7 @@ pre {
 
 .right-top>.data-box,
 .right-top>.chart-box {
-    top: 1rem;
+    top: 0.62rem;
 }
 
 .table1 {
@@ -856,10 +951,63 @@ pre {
     justify-content: center;
 }
 
+.data-box>.pie-box,.data-box>.data-percent {
+	display: inline-block;
+	width: 50%;
+	position: absolute;
+	left: 0;
+	height: 100%;
+}
+
+.data-box>.data-percent {
+	left: 50%;
+	display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+
+.percent-box{
+	width: 80%;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    box-sizing: border-box;
+    flex-direction:column;
+    padding: 10% 0;
+}
+
+.percent-box li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+        font-size: 0.15rem;
+    color: #f2f2f2;
+}
+
+.percent-box li>span:first-child{display:inline-flex;justify-content:flex-end;width: 8rem;}
+.percent-box li>span:last-child{display:inline-flex;justify-content:flex-start;width: 5rem;}
+.percent-box li p{display: inline-flex;width:100%;margin: 0 4px;height:8px;position:relative;background:#949494;border-radius:4px}
+.percent-box li p span{display:inline-flex;width:50%;height:8px;background:#c9a523;position:absolute;left:0;top:0;border-radius:4px 0 0 4px}
+
 .right-bottom {
     width: 100%;
     height: 30%;
     position: relative;
+}
+
+.right-bottom .current-num {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
 .data-box>.settings-box {

@@ -256,7 +256,7 @@ function echart_2() {
         '<span>'+item.percent+'</span>'+
         '</li>';
     })
-    // document.getElementById("personPercent").innerHTML = htmlPercente;
+       document.getElementById("personPercent").innerHTML = htmlPercente;
 
 }
 
@@ -527,7 +527,7 @@ var chart4Data = [{
     }]
 
     function chart4(data, type) {
-        var str = '<li><span></span><p>城市</p><p>派件</p></li>';
+        var str = '';
         for (var i = 0; i < 10; i++) {
             str += '<li><span>' + (i + 1) + '</span><p>' + data[i].name + '</p><p>' + data[i].value + '</p></li>';
         }
@@ -699,7 +699,7 @@ var chart4Data = [{
             },
             series: s_data
         };
-            $('.ranking-box').html(str);
+            $('#rankingList').html(str);
             myChart.setOption(option);
     }
 

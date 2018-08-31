@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="renderer" content="webkit">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+		<script type="text/javascript" src="js/rem.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+		<title>房屋与单位</title>
+		<link href="css/index_style.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body style="visibility: hidden;">
+		<div class="header" id="demo">
+			<canvas id="canvas"></canvas>
+		</div>
+		<div class="container-flex" tabindex="0" hidefocus="true">
+			<div class="box-left">
+				<div class="left-top">
+					<div class="current-num">
+						<div class="text-normal">房屋总数</div>
+						<p>123,456,789</p>
+					</div>
+				</div>
+				<div class="left-center">
+					<div class="title-box">
+						<h6>重点房屋分布</h6>
+					</div>
+					<div class="chart-box">
+						<div class="chart-txt">
+							<p>
+								<span>社区总数：14</span>
+								<span>小区总数：72</span>
+								<span>楼栋总数：687</span><br>
+								<span>单元总数：1387</span>
+								<span>房屋总数：187876</span>
+								<span>重点房屋数：187</span>
+							</p>
+						</div>
+						<div class="chart-box1" id="chart_1"></div>
+					</div>
+				</div>
+				<div class="left-bottom" class="select">
+					<div class="title-box">
+						<h6>房屋分类统计</h6>
+						<img class="line-img" src="images/line-blue.png" alt="">
+					</div>
+					<div class="chart-box" id="chart_2">
+
+					</div>
+				</div>
+			</div>
+			<div class="box-center">
+				<div class="center-top">
+					<h1>数据概况服务中心</h1>
+				</div>
+
+				<div class="center-center">
+					<div class="center-center-select">
+						<div class="select" tabindex="0" hidefocus="true">
+							<div class="select-div">
+								社区
+							</div>
+							<ul class="select-ul company" style="display: none;">
+								<li data-value="1">顺丰</li>
+								<li data-value="2">京东</li>
+								<li data-value="2">EMS</li>
+							</ul>
+						</div>
+						<div class="select" tabindex="0" hidefocus="true">
+							<div class="select-div">
+								小区
+							</div>
+							<ul class="select-ul company" style="display: none;">
+								<li data-value="1">顺丰</li>
+								<li data-value="2">京东</li>
+								<li data-value="2">EMS</li>
+							</ul>
+						</div>
+					</div>
+					<div class="community-data">
+						<div class="ranking-box house-list">
+							<ul class="ranking-box-tit">
+								<li>
+									<p>地址</p>
+									<p>房间号</p>
+									<span>时间</span>
+								</li>
+							</ul>
+							<div id="houseList" class="house-list-box">
+								<ul id="houseListInner">
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋12323</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1222</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>社区1</p>
+										<p>房屋1</p>
+										<span>08-30 18:30</span>
+									</li>
+
+								</ul>
+								<div id="houseListInner2"></div>
+							</div>
+						</div>
+
+						<div class="ranking-box company-list">
+							<ul class="ranking-box-tit">
+								<li>
+									<p>单位名称</p>
+									<span>时间</span>
+								</li>
+							</ul>
+							<div class="company-list-box" id="companyList">
+								<ul id="companyListInner">
+									<li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li>
+									<li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1单位1单位1单位1单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li><li>
+										<p>单位1</p>
+										<span>08-30 18:30</span>
+									</li>
+								</ul>
+								<div id="companyListInner2"></div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="center-bottom">
+					<div class="title-box">
+						<h6>单位分类统计</h6>
+					</div>
+					<div class="chart-box" id="chart_3">
+
+					</div>
+				</div>
+			</div>
+			<div class="box-right">
+				<div class="right-top">
+					<div class="title-box">
+						<h6 id="barTitle">单位分类统计</h6>
+						<img class="line-img" src="images/line-blue.png" alt="">
+						<!-- <button data-state=1 id="tabBtn"><img src="images/chart_icon.png" alt=""><span>图表</span></button> -->
+					</div>
+					<!--<p class="unit">单位：人</p>-->
+					<div class="chart-box">
+						<div class="chart-txt">
+							<p>
+								<span>单位总数：1928</span>
+								<span>普通单位：128</span>
+								<span>行业场所：928</span>
+								<span>管控物品：187</span>
+								<span>重点单位：198</span>
+							</p>
+						</div>
+						<div id="chart_4" class="chart-box1"></div>
+					</div>
+
+				</div>
+				<div class="right-center">
+					<div class="title-box">
+						<p id="switchBtn">
+							<span class="active" data-dataType="income">行业分类</span>
+							<img class="line-img" src="images/line-blue.png" alt="">
+						</p>
+						<img class="line-img" src="images/line-blue.png" alt="">
+						<!-- <button id="dateBtn"><img src="images/data_icon.png" alt="">日期</button> -->
+					</div>
+					<div class="data-box">
+						<div class="pie-box" id="chart_5">
+
+						</div>
+						<div class="data-percent">
+							<ul id="personPercent" class="percent-box">
+								<li><span>重点人员1：</span>
+									<p><span style="width:17.8%;background:#c440ef"></span></p><span>17.8%</span></li>
+								<li><span>重点人员22：</span>
+									<p><span style="width:19.9%;background:#efb013"></span></p><span>19.9%</span></li>
+								<li><span>重点人员：</span>
+									<p><span style="width:20.76%;background:#2fda07"></span></p><span>20.76%</span></li>
+								<li><span>重点人员3：</span>
+									<p><span style="width:20.76%;background:#d8ef13"></span></p><span>20.76%</span></li>
+								<li><span>重点人员4：</span>
+									<p><span style="width:20.76%;background:#2e4af8"></span></p><span>20.76%</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!--<div class="right-bottom">
+					<div class="current-num">
+						<div class="text-normal">房屋总数</div>
+						<p>123,456,789</p>
+					</div>
+				</div>-->
+				<div class="right-bottom">
+					<div class="title-box">
+						<h6>单位统计</h6>
+					</div>
+					<div class="current-num">
+						<p><span class="text-normal">单位总数：</span>123</p>
+						<p><span class="text-normal">最近更新单位：</span>19</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/houseCompany.js"></script>
+	<script type="text/javascript" src="js/star.js"></script>
+	<script type="text/javascript" src="js/tool.js"></script>
+
+	<script type="text/javascript">
+		$('document').ready(function() {
+			$("body").css('visibility', 'visible');
+		})
+
+		var speed = 30
+		window.onload = function() {
+			var houseList = document.getElementById("houseList");
+			var houseListInner2 = document.getElementById("houseListInner2");
+			var houseListInner = document.getElementById("houseListInner");
+			houseListInner2.innerHTML = houseListInner.innerHTML
+			var companyList = document.getElementById("companyList");
+			var companyListInner2 = document.getElementById("companyListInner2");
+			var companyListInner = document.getElementById("companyListInner");
+			companyListInner2.innerHTML = companyListInner.innerHTML
+
+			function Marquee() {
+				if(houseList.scrollTop >= houseListInner.offsetHeight) {
+					houseList.scrollTop = 0;
+				} else {
+					houseList.scrollTop = houseList.scrollTop + 1;
+				}
+			}
+
+			function Marquee1() {
+				if(companyList.scrollTop >= companyListInner.offsetHeight) {
+					companyList.scrollTop = 0;
+				} else {
+					companyList.scrollTop = companyList.scrollTop + 1;
+				}
+			}
+
+			var MyMar = setInterval(Marquee, speed)
+
+			var MyMar1 = setInterval(Marquee1, speed)
+
+			houseList.onmouseover = function() {
+				clearInterval(MyMar)
+			}
+			houseList.onmouseout = function() {
+				MyMar = setInterval(Marquee, speed)
+			}
+
+			companyList.onmouseover = function() {
+				clearInterval(MyMar1)
+			}			
+
+			companyList.onmouseout = function() {
+				MyMar1 = setInterval(Marquee1, speed)
+			}
+
+		}
+	</script>
+
+</html>
